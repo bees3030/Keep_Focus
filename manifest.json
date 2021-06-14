@@ -1,0 +1,32 @@
+{
+    "manifest_version":2,
+
+    "name": "Keep Focus",
+    "short_name": "kipo",
+    "version": "1.0.0",
+
+    "browser_action": {
+        "default_icon": "eye.png",
+        "default_tite": "Kipo",
+        "default_popup": "popup.html"
+    },
+
+    "permissions":[
+        "tabs",
+        "<all_urls>"
+    ],
+
+      "background": {
+          "scripts":["background.js"],
+          "persistent":false
+      },
+
+      "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "run_at": "document_start",
+          "js": ["content.js"],
+          "css": ["test.css"]
+        }
+      ]
+}
